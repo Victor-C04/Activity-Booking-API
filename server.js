@@ -18,5 +18,10 @@ app.use('/api', activityRoutes);
 const testRoutes = require('./routes/test');
 app.use('/api', testRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.get('/', (req, res) => {
+    res.send('Activity Booking API is running');
+    // Or serve documentation: res.sendFile(path.join(__dirname, 'docs', 'index.html'));
+  });
